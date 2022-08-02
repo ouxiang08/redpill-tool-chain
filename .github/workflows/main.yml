@@ -85,13 +85,14 @@ jobs:
         run: |
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-misc.json
 
-      - name: 添加 mlx4_core,r8125,ixgbe
+      - name: 添加 mlx4_core,r8125,ixgbe,ax88179_178a
         if: matrix.platform == 'ds918p'
         run: |
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/mlx4_core/rpext-index.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/r8125/rpext-index.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/ixgbe/rpext-index.json
-          echo '添加 mlx4_core,r8125,ixgbe'
+          ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/ax88179_178a/rpext-index.json
+          echo '添加 mlx4_core,r8125,ixgbe,ax88179_178a'
           
 
       - name: 预处理PAT
